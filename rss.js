@@ -73,10 +73,6 @@ module.exports = {
              rss.image = channel.image[0];
          }
      
-         if (channel.author.name) {
-             rss.author = channel.author.name[0];
-         }
-     
 //          if(util.isArray(channel.image)) // GC
 //           rss.image = channel.image[0];
 //          else
@@ -91,6 +87,7 @@ module.exports = {
            }
            channel.item.forEach(function(val){
              var obj = {};
+             obj.author = !util.isNullOrUndefined(val.author)?val.author[0]:'';
              obj.title = !util.isNullOrUndefined(val.title)?val.title[0]:'';
              obj.description = !util.isNullOrUndefined(val.description)?val.description[0]:'';
              // GC Add content:encoded
