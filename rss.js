@@ -72,6 +72,16 @@ module.exports = {
          if (channel.image) {
              rss.image = channel.image[0];
          }
+     
+         if (channel.author.name) {
+             rss.author = channel.author.name[0];
+         }
+     
+//          if(util.isArray(channel.image)) // GC
+//           rss.image = channel.image[0];
+//          else
+//           rss.image = '';
+     
          if (channel.link) {
              rss.url = channel.link[0];
          }
