@@ -87,9 +87,15 @@ module.exports = {
            }
            channel.item.forEach(function(val){
              var obj = {};
-             obj.author = !util.isNullOrUndefined(val.author)?val.author[0]:'';
              obj.title = !util.isNullOrUndefined(val.title)?val.title[0]:'';
              obj.description = !util.isNullOrUndefined(val.description)?val.description[0]:'';
+            
+             // GC Add content:encoded
+             // obj.author = !util.isNullOrUndefined(val.creator)?val.creator[0]:'';
+             if (val['dc:creator']) {
+               obj.author = val['dc:creator'];
+             }
+            
              // GC Add content:encoded
              if (val['content:encoded']) {
                obj.content = val['content:encoded'];
