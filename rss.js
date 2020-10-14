@@ -69,6 +69,9 @@ module.exports = {
          if (channel.description) {
              rss.description = channel.description[0];
          }
+         if (channel.image) {
+             rss.image = channel.image[0];
+         }
          if (channel.link) {
              rss.url = channel.link[0];
          }
