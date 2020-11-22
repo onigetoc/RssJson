@@ -2,7 +2,8 @@
 // Invoke 'strict' JavaScript mode
 'use strict';
  var  util = require('util'),
-      xml2js = require('xml2js'),
+      // xml2js = require('xml2js'), // try this one if it's better
+      xml2js = require('xml2json'),
       request = require('request');
 
 
